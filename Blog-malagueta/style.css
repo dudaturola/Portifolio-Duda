@@ -1,0 +1,371 @@
+/* Carregando a fonte */
+@font-face {
+    font-family:'font-isa'; /* Nome que você vai usar no CSS */
+    src: url('fonts/FLEUR.otf') format('opentype'); /* Caminho pro arquivo */
+    font-weight: normal; /* Ajuste se a fonte tiver pesos diferentes */
+    font-style: normal; /* Ajuste se for itálico, por exemplo */
+}
+
+@font-face {
+    font-family: 'sybarite';
+    src: url('fonts/SYBARITE\ MEDIUM.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1400px; /* Define a largura do conteúdo */
+    margin:  auto; /* Centraliza horizontalmente */
+    padding: 0; /* Espaço nas laterais */
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #E7E7BB;
+    color: #333;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+
+/* Cabeçalho */
+header {
+    background-color: #1C3D26;
+    color: white;
+    padding: 0.3rem 1rem ;/* Top: 0.5rem, Right: 1rem, Bottom: 0.2rem, Left: 1rem */
+    position: fixed; /*faz o header ficar fixo no topo */
+    top:0; /*faz ficar no topo da pagina*/
+    width:100%; /*ocupa toda a largura*/
+    z-index: 1000; /*garante que fique acima de outros elementos*/
+    display: flex; /*usa flexbox para alinharos itens*/
+    align-items: center; /*centraliza verticalmente*/
+    justify-content: space-between;
+    height: 70px; /*altura fixa fininha*/
+}
+
+.logo{
+    height: 65px;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav{
+    font-family: 'sybarite';
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap:1rem;
+}
+
+nav a{
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.menu-hamburguer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Largura do ícone */
+    height: 20px; /* Altura do ícone */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    position: absolute;
+    margin-left: 1rem; /* Espaço à direita */
+
+}
+
+.menu-hamburguer span{
+    width: 100%;
+    height: 3px; /* Espessura das linhas */
+    background-color: white; /* Cor das linhas */
+    border-radius: 2px; /* Bordas arredondadas */
+}
+
+
+.hero-tittle {
+    position: absolute;
+    top: 52%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    color: #BF2126;
+    font-size: 15rem;
+    font-family: 'font-isa', sans-serif; /* Usa a sua fonte personalizada */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 100%;
+}
+
+
+.header-image{
+    width: 100%;
+    height: 670px;
+    object-fit: cover;
+    object-position: 50% 11%;
+    display: block;
+    margin-top: 70px;
+}
+
+.nav2{
+    width: 100%;
+    background-color: #1C3D26;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} 
+
+.nav2 a{
+    font-family: 'font-isa', serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 31px;
+    padding: 0px 70px;
+} 
+
+.nav2 a:hover {
+    color: #fff;
+    background-color: #73BB74;
+}
+
+@media (max-width:768px) {
+    nav{
+        display: none; /* Esconde o nav em mobile */
+    }
+    .menu-hamburguer {
+        display: flex; /* Mostra o menu-hamburguer em mobile */
+    }
+}
+
+/*Seção de Notícias*/
+.noticias{
+    display: grid;
+    grid-template-columns: repeat(3,1fr); /* 3 colunas de largura igual */
+    padding: 0;
+    width: 100%;
+
+}
+
+
+
+.coluna-esquerda, .coluna-direita{
+    width: 50%; /* Cada coluna ocupa quase metade da largura */
+    display: flex;
+    flex-direction: column;
+}
+
+/*Estilizando as notícias*/
+article{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    /*background-color: #fff;*/
+}
+
+/* Imagem ocupa metade do espaço*/
+article img{
+    background-color: #000000;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/*Estilizando informações da noticia*/
+.info{
+    width: 50%;
+    height: 100%;
+    padding: 12px;
+    /*background-color: #fff;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* Centraliza verticalmente */
+    align-items: center;/* Centraliza horizontalmente */
+    gap: 10px;/* Espaço entre os elementos */
+}
+
+/* Cores diferentes para cada notícia */
+article:nth-child(1),
+article:nth-child(6) {
+    background-color: #1C3D26; /* Rosa claro para notícias 1, 3 e 5 */
+}
+article:nth-child(2),
+article:nth-child(4){
+    background-color: #73BB74; /* Rosa claro para notícias 1, 3 e 5 */
+}
+
+article:nth-child(3),
+article:nth-child(5){
+    background-color: #BF2126; /* Rosa claro para notícias 1, 3 e 5 */
+}
+article:nth-child(4),
+article:nth-child(5),
+article:nth-child(6){
+    flex-direction: row-reverse;
+}
+
+.info h2{
+    background-color: #000000;
+    line-height: 1.2;
+    font-family: 'font-isa';
+    font-size: 60px;
+    color: #E7E7BB;
+    text-align: left;/* Centraliza o texto */
+    margin: 0;/* Remove margens padrão */
+    width: 100%;
+}
+
+.info p {
+    font-family:'sybarite';
+    font-size: 15px;
+    color: #E7E7BB;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+    line-height: 1;
+    background:#BF2126;
+}
+
+.info a {
+    font-family: 'sybarite';
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    width: 60%;
+    border:1px solid #E7E7BB;
+    background-color: #1C3D26;
+    color: #E7E7BB;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+article:nth-child(1) .info a,
+article:nth-child(6) .info a{
+    color:#A01B20;
+    background-color: #E7E7BB;
+    border: 1px solid #A01B20;
+}
+article:nth-child(1) .info a:hover,
+article:nth-child(6) .info a:hover{
+    color:#E7E7BB;
+    background-color: #A01B20;
+    border: 1px solid #E7E7BB;
+}
+
+article:nth-child(1) .info a:hover,
+article:nth-child(6) .info a:hover{
+    color:#E7E7BB;
+    background-color: #A01B20;
+    border: 1px solid #E7E7BB;
+}
+
+article:nth-child(3) .info a:hover,
+article:nth-child(5) .info a:hover{
+    color:#1C3D26;
+    background-color: #E7E7BB;
+    border: 1px solid #1C3D26;
+}
+
+article:nth-child(2) .info a,
+article:nth-child(4) .info a{
+    color:#E7E7BB;
+    background-color: #A01B20;
+    border: 1px solid #E7E7BB;
+}
+article:nth-child(2) .info a:hover,
+article:nth-child(4) .info a:hover{
+    color:#A01B20;
+    background-color: #E7E7BB;
+    border: 1px solid #A01B20;
+}
+
+
+.info a:hover {
+    background-color: #A01B20;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .noticias {
+        grid-template-columns: 1fr;
+    }
+    .coluna-esquerda, .coluna-direita {
+        width: 100%;
+    }
+    article {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    article img, .info {
+        width: 100%;
+    }
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    margin-top: 20px;/* Espaço pra não sobrepor o header fixo */
+}
+
+.posts article {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.posts h2 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.posts h2 a:hover {
+    color: #e74c3c;
+}
+
+.posts span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.post-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1C3D26;
+    color: white;
+    position:static;
+    bottom: 0;
+    width: 100%;
+}

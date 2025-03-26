@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'sybarite';
-    src: url('fonts/SYBARITE\ MEDIUM.otf') format('opentype');
+    src: url('fonts/SYBARITE\MEDIUM.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,7 +21,7 @@
 }
 
 .container {
-    /*max-width: 1800px; /* Define a largura do conteúdo */
+    max-width: 1800px; /* Define a largura do conteúdo */
     margin: auto; /* Centraliza horizontalmente */
     padding: 0; /* Espaço nas laterais */
     width: 100%;

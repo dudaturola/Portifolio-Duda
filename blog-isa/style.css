@@ -21,9 +21,9 @@
 }
 
 .container {
-    max-width: 1800px; /* Define a largura do conteúdo */
+    max-width: 1600px; /* Define a largura do conteúdo */
     margin: auto; /* Centraliza horizontalmente */
-    padding: 0; /* Espaço nas laterais */
+    padding: 0 15px; /* Espaço nas laterais */
     width: 100%;
 }
 
@@ -130,18 +130,19 @@ nav a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2px;
     
     
 } 
 
 .nav2 a{
     font-family: 'font-isa', serif;
-    color: #fff;
+    color: #E7E7BB;
     text-decoration: none;
     text-align: center;
     align-items: center;
     font-size: 31px;
-    padding: 0px 70px;
+    padding: 0px 80px;
 } 
 
 .nav2 a:hover {
@@ -160,6 +161,7 @@ nav a:hover{
 
 /*Seção de Notícias*/
 .noticias{
+    margin-top: 2px;
     display: grid;
     grid-template-columns: repeat(3,1fr); /* 3 colunas de largura igual */
     padding: 0;
@@ -331,12 +333,43 @@ article:nth-child(4) .info a:hover{
 body{margin:0; padding: 0;}
 .slideshow-container{
     width: 100vw;
+    height: 500px;
     position: relative;
-    margin: auto;
-    z-index: 1;
 }
+
+.slideshow-container .text{
+    color: #E7E7BB;
+}
+
 .mySlides{
-    display: none;/* Esconde os slides por padrão */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mySlides:first-child{
+    display: flex;
+}
+
+
+.info-slide{
+    width: 50%; /* Metade da largura para informações */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f0f0f0; /* Cor de fundo opcional */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+    align-items: center; /* Centraliza o texto horizontalmente */
+    text-align: center;
+}
+
+.image-slide{
+    width: 50%;
+    height: 100%;
+}
+
+.image-slide img{
     width: 100%;
     height: 100%;
     object-fit: cover;
